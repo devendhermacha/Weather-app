@@ -1,0 +1,18 @@
+<div>
+  <div class="img_logo">
+    <img src="../../assets/Logo.png">
+    <div class="title-weather">My Weather</div>
+  </div>
+
+  <div class="search-box">
+    <input class="form-control" type="search" class="search-input" [(ngModel)]="searchLocation" placeholder="search" (ngModelChange)="locationChange($event)">
+    <!--<span class="glyphicon glyphicon-search"></span>-->
+
+    <ul class="list_items" *ngIf="matchingItems && matchingItems.length && showList">
+      <li class="items" *ngFor="let item of matchingItems" (click)="selectItem(item)">
+        {{item.title}}
+
+      </li>
+    </ul>
+  </div>
+</div>

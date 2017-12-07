@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  weatherLocaationUrl: 'https://www.metaweather.com/api/location/search/?query=',
+  weatherApi:'https://www.metaweather.com/api/location/'
 };

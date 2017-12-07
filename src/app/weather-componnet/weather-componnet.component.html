@@ -1,0 +1,143 @@
+<div class="container">
+
+<search-component [searchLocation]="searchLocation"></search-component>
+
+  <!--Img for baner-->
+  <div class="img_container">
+    <div class="location_info" *ngIf="weatherResponse && weatherResponse.consolidated_weather.length>0">
+      {{weatherResponse.title}}
+    </div>
+    <div class="sunset_info" *ngIf="weatherResponse && weatherResponse.consolidated_weather.length>0">
+      <ul class="list_style">
+        <li><span>Time:</span>{{weatherResponse.time | date:'shortTime'}}</li>
+        <li><span>SunRise:</span>{{weatherResponse.sun_rise | date:'shortTime'}}</li>
+        <li><span>SunSet:</span>{{weatherResponse.sun_set | date:'shortTime'}}</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- Todays weather information-->
+
+  <span class="fullinfo" *ngIf="weatherResponse" (click)="statusChange()">
+   {{weatherStatusText}}
+  </span>
+
+  <div class="todays_weather" *ngIf="weatherResponse && weatherResponse.consolidated_weather.length>0 && (!weatherStatus)">
+     <div class="title_today">
+       Today
+    <div class="line_box"></div>
+     </div>
+
+  <!--Box Model create-->
+  <div class="box_model_divider">
+     <div class="box_model_list">
+       <div class="box_model">
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].min_temp)}} &#8451;
+         </div>
+         <div class="temp_length">
+          Min Temp
+         </div>
+       </div>
+       <div class="box_model change_bg">
+         <div class="temp_length ">
+           Wind Speed
+         </div>
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].wind_speed)}}mph
+         </div>
+
+       </div>
+       <div class="box_model">
+         <div class="temp_length">
+           Visibility
+         </div>
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].visibility)}}mph
+         </div>
+
+       </div>
+       <div class="box_model change_bg">
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].max_temp)}} &#8451;
+         </div>
+         <div class="temp_length">
+           Max Temp
+         </div>
+       </div>
+       <div class="box_model">
+         <div class="temp_length">
+           Humidity
+         </div>
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].humidity)}}mph
+         </div>
+
+       </div>
+       <div class="box_model box_model_length change_bg">
+         <div class="temp_length">
+           Pressure
+         </div>
+         <div class="temp_length">
+           {{roundNumber(weatherResponse.consolidated_weather[0].air_pressure)}}mph
+         </div>
+
+       </div>
+
+     </div>
+    <div class="">
+      <img class="thunder_img" src="../../assets/thunder.png">
+    </div>
+  </div>
+  </div>
+
+  <!---->
+  <div class="weather_information"  *ngIf=" (weatherStatus) && weatherResponse && weatherResponse.consolidated_weather.length>0">
+
+    <div *ngFor="let item of weatherResponse.consolidated_weather;let i=index">
+    <div class="main_list_below">
+    <div class="today">
+        <span>{{getValueForDay(i)}}</span>
+      <span *ngIf="checkValue(i)">{{item.applicable_date | date:'mediumDate'}}</span>
+    </div>
+      <div class="thunder">
+        <img class="thunderimg" src="../../assets/thunder.png"/>
+        <span class="thunder_class_name">Thunder</span>
+      </div>
+      <div class="weather-info">
+         <div class="col-md-6 bgclor">
+            <div>Min Temp</div>
+            <div> {{roundNumber(item.min_temp)}} &#8451;</div>
+         </div>
+        <div class="col-md-6 bgclor">
+          <div>Max Temp</div>
+          <div> {{roundNumber(item.min_temp)}} &#8451;</div>
+        </div>
+        <div class="col-md-6">
+          <div>Pressure</div>
+          <div> {{roundNumber(item.air_pressure)}}mph</div>
+        </div>
+        <div class="col-md-6">
+          <div>Wind Speed</div>
+          <div>{{roundNumber(item.wind_speed)}}mph</div>
+        </div>
+        <div class="col-md-6 bgclor">
+          <div>Visibility</div>
+          <div> {{roundNumber(item.visibility)}}mph</div>
+        </div>
+        <div class="col-md-6 bgclor">
+          <div>Humidity</div>
+          <div>{{roundNumber(item.humidity)}}mph</div>
+        </div>
+      </div>
+
+  </div>
+    </div>
+  </div>
+
+  <!--<div class="row">-->
+    <!--<div class="col-md-4 bgclor">-->
+      <!--Today-->
+    <!--</div>-->
+  <!--</div>-->
+</div>

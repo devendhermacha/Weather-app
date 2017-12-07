@@ -1,0 +1,135 @@
+.list_items{
+  z-index: 997;
+  background-color: white;
+  list-style: none;
+  border: 1px solid gray;
+  width: 158px;
+  margin-top: 0px;
+  max-height: 108px;
+  overflow-y: scroll;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+.img_logo{
+  float:left;
+}
+.title-weather{
+  float: right;
+  margin-left: 28px;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.search-box{
+  float: right;
+  margin-top: 39px;
+  margin-right: 87px;
+}
+.search-input{
+  height: 26px;
+}
+.items{
+  cursor: pointer;
+}
+.img_container{
+  background: url(../../assets/banner.png);
+  height: 248px;
+  clear: both;
+}
+.location_info{
+  padding: 115px;
+  color: #40ea40;
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 2.5;
+}
+.sunset_info{
+  float: right;
+  color: white;
+  margin-right: 64px;
+  margin-top: 70px;
+}
+.list_style{
+  list-style: none;
+}
+.todays_weather{
+  margin-top:3px;
+}
+.title_today{
+ /*// float: left;*/
+
+  font-size: 24px;
+  margin-left: 63px;
+  font-weight:bold;
+}
+.line_box{
+  padding: 1px;
+  border: 1px solid #1d73b7;
+  background: #1d73b7;
+  width: 71px;
+  margin-left: 293px;
+}
+.box_model{
+  float: left;
+  padding: 69px;
+  /*border: 1px solid black;*/
+  background: whitesmoke;
+}
+.box_model_list{
+  width:61%;
+}
+.temp_length{
+  font-size: 20px;
+}
+.change_bg{
+  background: #6969694a;
+}
+.box_model_length{
+  padding:61px;
+}
+.thunder_img{
+  padding:128px;
+}
+.main_list_below{
+  width: 25%;
+  margin-top: 10px;
+  float:left;
+  padding:12px;
+}
+.today{
+  border: 1px solid lightseagreen;
+  background: dodgerblue;
+  height: 42px;
+  text-align: center;
+
+}
+.thunderimg{
+  height:44px;
+}
+.thunder{
+  padding:12px;
+}
+.thunder_class_name{
+  margin-top: 8px;
+  float: right;
+}
+.left_side_items{
+  float:left;
+  clear:right;
+}
+.right_side_items {
+  float: right;
+}
+.bgclor{
+  background: #80808047;
+}
+.weather_information{
+  margin-top:85px;
+}
+.fullinfo{
+  cursor: pointer;
+  text-decoration: underline;
+  color:blue;
+}
